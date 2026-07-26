@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0; padding: 20px; }
+.container { max-width: 1000px; margin: 0 auto; background: white; padding: 24px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.uploader { margin-top: 16px; }
+button { padding: 10px 16px; border-radius: 8px; border: none; background: #0b74de; color: #fff; cursor: pointer; }
+.result-card { margin-top: 18px; display:flex; gap:18px; align-items:flex-start; }
+.images div { text-align:center; }
+.summary { max-width: 460px; }
+.det { margin-bottom:6px; }
