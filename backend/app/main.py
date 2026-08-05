@@ -1,8 +1,8 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
-from .model import analyze_image_from_bytes
-from .schemas import PredictionResponse
+from model import analyze_image_from_bytes
+from schemas import PredictionResponse
 import uvicorn
 import base64
 import os
