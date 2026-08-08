@@ -6,3 +6,5 @@ numpy
 opencv-python
 Pillow
 requests
+fpdf
+reportlab

@@ -50,16 +50,6 @@ export default function Upload() {
             <label 
               htmlFor="file-upload" 
               style={styles.fileUploadLabel}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'translateY(-5px)';
-                e.target.style.boxShadow = '0 10px 25px rgba(74, 144, 226, 0.3)';
-                e.target.style.borderColor = '#66b3ff';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = 'none';
-                e.target.style.borderColor = '#4a90e2';
-              }}
             >
               <div style={styles.uploadIcon}>📁</div>
               <h3 style={styles.uploadTitle}>Choose Dental X-ray</h3>
@@ -90,18 +80,6 @@ export default function Upload() {
                 loading || !file
                   ? "#333"
                   : "linear-gradient(135deg, #4a90e2 0%, #357abd 100%)",
-            }}
-            onMouseEnter={(e) => {
-              if (!loading && file) {
-                e.target.style.transform = 'translateY(-3px)';
-                e.target.style.boxShadow = '0 15px 30px rgba(74, 144, 226, 0.6)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!loading && file) {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = '0 10px 25px rgba(74, 144, 226, 0.4)';
-              }
             }}
           >
             {loading ? (
@@ -397,180 +375,56 @@ const styles = {
     animation: "spin 1s linear infinite",
   },
 
-  resultsContainer: {
-    background: "#1a1a1a",
-    borderRadius: "20px",
-    padding: "3rem",
-    maxWidth: "1000px",
-    margin: "0 auto",
-    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
-    border: "1px solid #333",
-  },
+  resultsContainer: { background: "#1a1a1a", borderRadius: "20px", padding: "3rem", maxWidth: "1000px", margin: "0 auto", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid #333" },
 
-  imageSection: { 
-    marginBottom: "3rem" 
-  },
+  imageSection: { marginBottom: "3rem" },
 
-  sectionTitle: {
-    color: "#fff",
-    marginBottom: "2rem",
-    fontSize: "1.8rem",
-    textAlign: "center",
-    fontWeight: "600",
-  },
+  sectionTitle: { color: "#fff", marginBottom: "2rem", fontSize: "1.8rem", textAlign: "center", fontWeight: "600" },
 
-  imageComparison: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "2rem",
-    alignItems: "start",
-  },
+  imageComparison: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", alignItems: "start" },
 
-  originalImageContainer: { 
-    textAlign: "center" 
-  },
-  overlayImageContainer: { 
-    textAlign: "center" 
-  },
+  originalImageContainer: { textAlign: "center" },
+  overlayImageContainer: { textAlign: "center" },
 
-  imageLabel: { 
-    color: "#fff", 
-    marginBottom: "1rem", 
-    fontWeight: "600",
-    fontSize: "1.2rem",
-  },
+  imageLabel: { color: "#fff", marginBottom: "1rem", fontWeight: "600", fontSize: "1.2rem" },
 
-  originalImage: {
-    width: "100%",
-    maxWidth: "400px",
-    borderRadius: "12px",
-    border: "2px solid #333",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-  },
+  originalImage: { width: "100%", maxWidth: "400px", borderRadius: "12px", border: "2px solid #333", boxShadow: "0 10px 25px rgba(0,0,0,0.4)" },
 
-  /* FIXED — overlay image only (with red boxes visible) */
-  overlayImageOnly: {
-    width: "100%",
-    maxWidth: "400px",
-    borderRadius: "12px",
-    display: "block",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-  },
+  overlayImageOnly: { width: "100%", maxWidth: "400px", borderRadius: "12px", display: "block", boxShadow: "0 10px 25px rgba(0,0,0,0.4)" },
 
-  overlayWrapper: {
-    position: "relative",
-    display: "inline-block",
-    borderRadius: "12px",
-    overflow: "hidden",
-    border: "2px solid #333",
-  },
+  overlayWrapper: { position: "relative", display: "inline-block", borderRadius: "12px", overflow: "hidden", border: "2px solid #333" },
 
-  detectedBadge: {
-    position: "absolute",
-    bottom: "10px",
-    left: "10px",
-    background: "rgba(255,0,0,0.8)",
-    color: "white",
-    padding: "5px 10px",
-    borderRadius: "20px",
-    fontSize: "0.8rem",
-    fontWeight: "600",
-  },
+  detectedBadge: { position: "absolute", bottom: "10px", left: "10px", background: "rgba(255,0,0,0.8)", color: "white", padding: "5px 10px", borderRadius: "20px", fontSize: "0.8rem", fontWeight: "600" },
 
-  reportSection: { 
-    width: "100%" 
-  },
+  reportSection: { width: "100%" },
 
-  reportCard: {
-    background: "#2d2d2d",
-    padding: "2rem",
-    borderRadius: "15px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "1.5rem",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-    border: "1px solid #444",
-  },
+  reportCard: { background: "#2d2d2d", padding: "2rem", borderRadius: "15px", display: "flex", flexDirection: "column", gap: "1.5rem", boxShadow: "0 10px 25px rgba(0,0,0,0.4)", border: "1px solid #444" },
 
-  reportSectionItem: {
-    background: "#333",
-    padding: "1.5rem",
-    borderRadius: "10px",
-    border: "1px solid #444",
-  },
+  reportSectionItem: { background: "#333", padding: "1.5rem", borderRadius: "10px", border: "1px solid #444" },
 
-  sectionHeader: { 
-    display: "flex", 
-    alignItems: "center", 
-    gap: "0.5rem", 
-    marginBottom: "1rem" 
-  },
+  sectionHeader: { display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" },
 
-  sectionIcon: { 
-    fontSize: "1.2rem" 
-  },
+  sectionIcon: { fontSize: "1.2rem" },
 
-  sectionContent: { 
-    color: "#cbd5e0" 
-  },
+  sectionContent: { color: "#cbd5e0" },
 
-  detailText: { 
-    margin: 0,
-    fontSize: "0.95rem",
-  },
+  detailText: { margin: 0, fontSize: "0.95rem" },
 
-  problemsList: { 
-    paddingLeft: "20px", 
-    margin: 0 
-  },
+  problemsList: { paddingLeft: "20px", margin: 0 },
 
-  problemItem: { 
-    marginBottom: "10px",
-    fontSize: "0.9rem",
-    lineHeight: "1.4",
-  },
+  problemItem: { marginBottom: "10px", fontSize: "0.9rem", lineHeight: "1.4" },
 
-  breakdownItem: { 
-    marginBottom: "14px", 
-    paddingBottom: "10px" 
-  },
+  breakdownItem: { marginBottom: "14px", paddingBottom: "10px" },
 
-  breakdownRow: { 
-    display: "flex", 
-    justifyContent: "space-between", 
-    marginBottom: "5px" 
-  },
+  breakdownRow: { display: "flex", justifyContent: "space-between", marginBottom: "5px" },
 
-  breakdownLabel: { 
-    fontWeight: "600", 
-    color: "#e2e8f0",
-    fontSize: "0.9rem",
-  },
+  breakdownLabel: { fontWeight: "600", color: "#e2e8f0", fontSize: "0.9rem" },
 
-  breakdownValue: { 
-    color: "#cbd5e0",
-    fontSize: "0.9rem",
-  },
+  breakdownValue: { color: "#cbd5e0", fontSize: "0.9rem" },
 
-  separator: { 
-    height: "1px", 
-    background: "rgba(255,255,255,0.1)", 
-    marginTop: "10px" 
-  },
+  separator: { height: "1px", background: "rgba(255,255,255,0.1)", marginTop: "10px" },
 
-  pdfButton: {
-    padding: "12px 20px",
-    background: "linear-gradient(135deg, #0b84ff 0%, #0066cc 100%)",
-    color: "white",
-    border: "none",
-    borderRadius: "8px",
-    fontWeight: "600",
-    cursor: "pointer",
-    marginTop: "1rem",
-    fontSize: "1rem",
-    boxShadow: "0 4px 15px rgba(11, 132, 255, 0.3)",
-    transition: "all 0.3s ease",
-  },
+  pdfButton: { padding: "12px 20px", background: "linear-gradient(135deg, #0b84ff 0%, #0066cc 100%)", color: "white", border: "none", borderRadius: "8px", fontWeight: "600", cursor: "pointer", marginTop: "1rem", fontSize: "1rem", boxShadow: "0 4px 15px rgba(11, 132, 255, 0.3)", transition: "all 0.3s ease" },
 };
 
 /* Global styles */
