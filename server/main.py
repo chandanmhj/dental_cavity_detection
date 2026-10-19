@@ -116,4 +116,4 @@ async def download_pdf(file: UploadFile = File(...)):
     return FileResponse(pdf_name, filename=pdf_name, media_type="application/pdf")
 
 if __name__ == "__main__":
-    uvicorn.run("server.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

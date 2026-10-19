@@ -1,7 +1,54 @@
-body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0; padding: 20px; }
-.container { max-width: 1000px; margin: 0 auto; background: white; padding: 24px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+:root{
+	--bg-1: linear-gradient(135deg,#0f1724 0%,#071026 100%);
+	--glass-bg: rgba(255,255,255,0.06);
+	--glass-border: rgba(255,255,255,0.12);
+	--accent: #4a90e2;
+}
+
+html,body,#root{height:100%;}
+body { font-family: Inter, Arial, sans-serif; margin: 0; padding: 0; background: var(--bg-1); color: #e6eef8; }
+.app-root{display:flex;flex-direction:column;min-height:100vh}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
+.brand{font-weight:700;font-size:1.1rem}
+.nav-links button{background:transparent;border:1px solid transparent;color:var(--accent);padding:8px 12px;border-radius:8px;margin-left:8px;cursor:pointer}
+.nav-links button:hover{background:rgba(255,255,255,0.03);border-color:var(--glass-border)}
+
+.main-area{flex:1;display:flex;flex-direction:column;gap:28px;padding:28px}
+
+.glass-card{backdrop-filter: blur(8px) saturate(120%);-webkit-backdrop-filter: blur(8px) saturate(120%);background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:14px;padding:20px}
+
+.landing{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+.hero{display:flex;flex-direction:column;gap:12px;padding:36px}
+.hero-title{font-size:2rem;margin:0}
+.hero-sub{opacity:0.85}
+.hero-cta .primary{background:linear-gradient(135deg,var(--accent),#357abd);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
+
+.hero-grid{display:flex;gap:20px;align-items:center}
+.hero-images{display:flex;flex-direction:column;gap:12px;align-items:center}
+.hero-images img{width:140px;height:auto;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px}
+
+.stack .tech-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.stack .tech-list li{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px}
+
+.credits{margin-top:8px}
+
+.about-page{display:flex;justify-content:center;padding:40px}
+.about-card{max-width:820px}
+
+.demo-area{max-width:1000px;margin:0 auto}
+
+.footer{padding:16px 28px;text-align:center;color:rgba(230,238,248,0.6)}
+
+/* small screens */
+@media (max-width:900px){
+	.landing{grid-template-columns:1fr}
+	.nav{padding:12px}
+	.main-area{padding:16px}
+}
+
+/* keep Upload component styles imported earlier (the file had more styles originally) */
 .uploader { margin-top: 16px; }
-button { padding: 10px 16px; border-radius: 8px; border: none; background: #0b74de; color: #fff; cursor: pointer; }
+button { padding: 10px 16px; border-radius: 8px; border: none; background: var(--accent); color: #fff; cursor: pointer; }
 .result-card { margin-top: 18px; display:flex; gap:18px; align-items:flex-start; }
 .images div { text-align:center; }
 .summary { max-width: 460px; }
